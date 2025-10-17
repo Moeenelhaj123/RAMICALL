@@ -1,0 +1,84 @@
+/* Use Poppins everywhere - Single Source of Truth */
+html {
+  font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis-weight: none; /* prevent fake bold */
+}
+
+/* Numeric alignment for dashboards */
+.tabular, .tabular-nums { 
+  font-variant-numeric: tabular-nums; 
+  font-feature-settings: "tnum";
+}
+
+/* Ensure body surfaces inherit theme colors */
+body { 
+  background: rgb(var(--background, 255 255 255)); 
+  color: rgb(var(--foreground, 15 23 42)); 
+}
+
+/* Force Poppins on all elements - Single Source of Truth */
+* {
+  font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial !important;
+}
+
+/* Remove any font synthesis for crisp rendering */
+*, *::before, *::after {
+  font-synthesis: none;
+  font-synthesis-weight: none;
+  font-synthesis-style: none;
+}
+
+/* Ensure MUI components use Poppins */
+.MuiTypography-root,
+.MuiButton-root,
+.MuiTextField-root,
+.MuiInputBase-root,
+.MuiSelect-root,
+.MuiFormLabel-root,
+.MuiMenuItem-root,
+.MuiTableCell-root,
+.MuiChip-root,
+[class*="Mui"] {
+  font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial !important;
+}
+
+/* Ensure Radix/shadcn components use Poppins */
+[data-radix-portal],
+[data-radix-select-content],
+[data-radix-dropdown-menu-content],
+[data-radix-dialog-content],
+[data-radix-popover-content],
+[data-radix-tooltip-content],
+[class*="radix"],
+[class*="shadcn"] {
+  font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial !important;
+}
+
+/* Input normalization for datetime-local and other native inputs */
+.input-reset {
+  appearance: none;             /* remove native bevel */
+  -webkit-appearance: none;
+  color-scheme: light;          /* prevent dark native picker in dark mode */
+}
+
+/* Fix Chrome autofill grey/yellow backgrounds */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #334155; /* slate-700 */
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset; /* keep bg white */
+  transition: background-color 9999s ease-out 0s; /* suppress flash */
+}
+
+/* Force white background on all form inputs */
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="tel"] {
+  background-color: #ffffff !important;
+  background-image: none !important;
+}
